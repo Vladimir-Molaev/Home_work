@@ -9,22 +9,22 @@ m = 3, n = 4.
 */
 
 Console.Write("Введите два числа m и n: ");
-string[] s = Console.ReadLine().Split();
-int m = int.Parse(s[0]);
+string[] s = Console.ReadLine().Split();    // считываем строку, парсим и присваевыем значения 
+int m = int.Parse(s[0]);                    // переменным m и n
 int n = int.Parse(s[1]);
 double[,] array = new double[m, n];
 
-void GeneratingInArray(int m, int n)
+void GeneratingInArray(int m, int n)                        // генерируем массив
 {
-    Random rnd = new Random();
+    Random rnd = new Random();  //
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++ )
         {
-            double the_whole_part = rnd.Next(1, 100);
-            double the_fraction_part;
-            while (true)
-            {
+            double the_whole_part = rnd.Next(1, 100);       // генерируем целую часть
+            double the_fraction_part;                       // <-- переменная для дробной части
+            while (true)                                    // цикл нужен для проверки дробной части на ноль
+            {                                               // если дробн. часть равна нулю, генерируем заново
                 the_fraction_part = rnd.NextDouble();
                 if (the_fraction_part > 0)
                 {
@@ -36,7 +36,7 @@ void GeneratingInArray(int m, int n)
     }
 }
 
-void PrintArray(int m, int n)
+void PrintArray(int m, int n)   // печать массива на экран
 {
     for (int i = 0; i < m; i++)
     {
