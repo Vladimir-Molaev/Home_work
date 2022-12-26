@@ -21,7 +21,17 @@ void GeneratingInArray(int m, int n)
     {
         for (int j = 0; j < n; j++ )
         {
-            array[i, j] = Math.Round((rnd.Next(1, 100) + rnd.NextDouble()), 2);
+            double the_whole_part = rnd.Next(1, 100);
+            double the_fraction_part;
+            while (true)
+            {
+                the_fraction_part = rnd.NextDouble();
+                if (the_fraction_part > 0)
+                {
+                    break;
+                }            
+            }
+            array[i, j] = Math.Round((the_whole_part + the_fraction_part), 2);
         }
     }
 }
