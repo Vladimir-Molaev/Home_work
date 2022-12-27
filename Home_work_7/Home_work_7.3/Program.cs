@@ -11,11 +11,11 @@
 => [505, 252.5, 0, 363 ]
 */
 
-Random rnd = new Random();                                  // генерируем начальные размеры массива
-int i = 10; //rnd.Next(10, 100);                            // ограничил величинами 9х9
-int j = 10; //rnd.Next(10, 100);
+Random rnd = new Random();                           // генерируем начальные размеры массива
+int i = rnd.Next(10, 35);                            // ограничил макс. размерами 35х35 для более удобного восприятия на экране
+int j = rnd.Next(10, 35);
 int [,] array = new int[i, j];
-double[] arithmetic_mean = new double[i];
+double[] arithmetic_mean = new double[j];
 
 void GeneratingInArray(int row, int column)                 // генерируем массив
 {
