@@ -15,7 +15,7 @@ int column = rnd.Next(2, 10);
 
 int[,] array = new int[row, column];
 
-void Swap(ref int a, ref int b) // Меняем местами два числа
+void Swap(ref int a, ref int b) // Меняем местами два числа, работаем с ссылками на элементы массива
 {
     if (a < b)
     {
@@ -26,7 +26,7 @@ void Swap(ref int a, ref int b) // Меняем местами два числа
 
 }
 
-void PrintArray(int row, int column)
+void PrintArray(int row, int column) // Выводим массив на экран
 {
     for (int i = 0; i < row; i++)
     {
@@ -49,12 +49,12 @@ void GeneratingInArray(int row, int column) // Генеррируем масси
     }
 }
 
-void SortringAnArray(int row, int column)
+void SortringAnArray(int row, int column) // Сортируем массив
 {
     for (int i = 0; i < row; i++)
     {
-        for (int j = 0; j < (column+1)/2; j++)
-        {
+        for (int j = 0; j < column; j++) // Проходимся column-раз по строке, чтобы самое дальнее число вывести в начало
+        {                                // если она имеет максимальное значение
             for (int k = 0; k < column - 1; k++)
             {
                 Swap(ref array[i, k], ref array[i, k + 1]);
@@ -64,8 +64,8 @@ void SortringAnArray(int row, int column)
 }
 
 GeneratingInArray(row, column);
+Console.WriteLine("Вывод сгенерированного массива: ");
 PrintArray(row, column);
-Console.WriteLine(String.Join(" ", array));
 SortringAnArray(row, column);
 Console.WriteLine("Вывод отсортированного массива: ");
 PrintArray(row, column);
