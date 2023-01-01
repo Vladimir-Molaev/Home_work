@@ -26,7 +26,7 @@ void GeneratingInArray(ref int[,] array) // Генеррируем массив
     }
 }
 
-void TheProductOfRowByColumn(int row_prod, int column_prod)
+void TheProductOfRowByColumn(int row_prod, int column_prod) // умножаем строку на столбец
 {
     for (int i = 0; i < array_1.GetLength(1); i++)
     {
