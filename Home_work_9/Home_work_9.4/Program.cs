@@ -11,9 +11,10 @@ internal class Program
     private static void Main(string[] args)
     {
         Random rnd = new Random();
-        int size_of_array = rnd.Next(4, 11);
-        Console.WriteLine($"Создаем квадратный массив размером {size_of_array}x{size_of_array}");
-        int[,] array = new int[size_of_array, size_of_array];
+        int size_of_array_1 = rnd.Next(4, 10);
+        int size_of_array_2 = rnd.Next(4, 10);
+        Console.WriteLine($"Создаем квадратный массив размером {size_of_array_1}x{size_of_array_2}");
+        int[,] array = new int[size_of_array_1, size_of_array_2];
         int i = 0, j = 0, count = 1, row = 1;
 
         void PrintArray(int[,] array)
@@ -21,7 +22,9 @@ internal class Program
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
-                { Console.Write(array[i, j].ToString("D2") + " "); }
+                { 
+                    Console.Write(array[i, j].ToString("D3") + " "); 
+                }
                 Console.WriteLine();
             }
         }
