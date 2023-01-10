@@ -12,6 +12,7 @@ internal class Program
     {
         Random rnd = new Random();
         int size_of_array = rnd.Next(4, 11);
+        Console.WriteLine($"Создаем квадратный массив размером {size_of_array}x{size_of_array}");
         int[,] array = new int[size_of_array, size_of_array];
         int i = 0, j = 0, count = 1, row = 1;
 
